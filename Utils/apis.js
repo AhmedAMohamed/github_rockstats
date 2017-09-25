@@ -10,8 +10,8 @@ var Api = function(api_name, params) {
         'User-Agent': 'Request-Promise'
     };
     this.query.qs = {
-        client_id: "b47401ec6f6283b359cc"
-        access_token: secret_tokens.github_api_token
+        client_id: "b47401ec6f6283b359cc",
+        client_secret: secret_tokens.github_api_token
     };
     this.query.json = true;
 };
