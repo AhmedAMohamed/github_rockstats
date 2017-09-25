@@ -17,8 +17,9 @@ router.get('/', function(req, res, next) {
     var query = api.create_query();
     request_promise(query)
     .then(function(results) {
-        console.log("here");
         var users_data = slice(results.items, 0, 5);
+        console.log("here");
+
         var users_usernames = users_data.map(function(user) {
             return filter_obj(user, ['login']);
         });
