@@ -3,7 +3,7 @@ var router = express.Router();
 
 var request_promise = require('request-promise');
 var slice = require('array-slice');
-var Promise = require('Promise');
+var Promise = require('promise');
 var filter_obj = require('filter-obj');
 
 var APIs = require('../Utils/apis');
