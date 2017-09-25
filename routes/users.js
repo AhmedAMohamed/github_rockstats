@@ -15,6 +15,7 @@ router.get('/', function(req, res, next) {
     var user_name = req.headers.search_name;
     var api = new APIs(reserved_words.search_users, [user_name, "repos"]);
     var query = api.create_query();
+    console.log("here");
     request_promise(query)
     .then(function(results) {
         var users_data = slice(results.items, 0, 5);
