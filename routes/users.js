@@ -19,9 +19,9 @@ router.get('/', function(req, res, next) {
     .then(function(results) {
         var users_data = slice(results.items, 0, 5);
         var users_usernames = users_data.map(function(user) {
+            console.log("here");
             return filter_obj(user, ['login']);
         });
-        console.log("here");
         var user_promises = users_usernames.map(function(username) {
             return Helpers.getUserInfos(username.login);
         });
