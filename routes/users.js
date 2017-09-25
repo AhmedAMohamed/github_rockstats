@@ -20,10 +20,10 @@ router.get('/', function(req, res, next) {
         var users_data = slice(results.items, 0, 5);
 
         var users_usernames = users_data.map(function(user) {
-            console.log("here");
             return filter_obj(user, ['login']);
         });
         var user_promises = users_usernames.map(function(username) {
+            console.log("here");
             return Helpers.getUserInfos(username.login);
         });
         Promise.all(user_promises)
