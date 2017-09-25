@@ -31,9 +31,6 @@ router.get('/', function(req, res, next) {
                     ['avatar_url', 'public_repos', 'public_gists', 'followers', 'following', 'bio', 'login', 'name']);
                 return Helpers.calculateScore(filtered_user);
             });
-            users_data.map(function(user) {
-                console.log(user.bio);
-            });
             users_data.sort(function(a,b) {
                 if (a.popularity_score > b.popularity_score) {
                     return -1;
