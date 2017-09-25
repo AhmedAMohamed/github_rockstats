@@ -56,8 +56,6 @@ router.get('/', function(req, res, next) {
         console.log("error 2");
         res.json(err);
     })
-
-res.json("hello");
 });
 
 module.exports = router;
