@@ -15,13 +15,13 @@ router.get('/', function(req, res, next) {
     var user_name = req.headers.search_name;
     var api = new APIs(reserved_words.search_users, [user_name, "repos"]);
     var query = api.create_query();
-    console.log("here");
     request_promise(query)
     .then(function(results) {
         var users_data = slice(results.items, 0, 5);
         var users_usernames = users_data.map(function(user) {
             return filter_obj(user, ['login']);
         });
+        console.log("here");
         var user_promises = users_usernames.map(function(username) {
             return Helpers.getUserInfos(username.login);
         });
