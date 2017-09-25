@@ -1,5 +1,6 @@
 var Octokit = require('octokit');
 
+var secret_tokens = require('../Strings/secrets');
 var helpers = {
     calculateScore : function(user) {
         var sum = user.public_repos + user.public_gists + user.followers + user.following;
