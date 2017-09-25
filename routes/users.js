@@ -51,7 +51,7 @@ router.get('/', function(req, res, next) {
         })
     })
     .catch(function(err) {
-        console.log("error 2");
+        console.log("error 2",err);
         res.json(err);
     })
 });
